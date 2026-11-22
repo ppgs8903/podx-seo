@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><title>智能平台 | Podxero 多模型实时感知与引用编排控制台</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%);}100%{transform:translateX(-50%);}}@keyframes shimmer{0%{background-position:-200% 0;}100%{background-position:200% 0;}}.animate-marquee{display:flex;width:max-content;animation:marquee 30s linear infinite;}.animate-shimmer{background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0) 100%);background-size:200% 100%;animation:shimmer 2.5s infinite;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-variant":"#e2e2e2","tertiary-fixed-dim":"#afcadc","on-tertiary-container":"#405b6a","surface-container":"#eeeeee","tertiary":"#476271","on-surface-variant":"#3b4b3b","primary-fixed-dim":"#00e560","on-background":"#1a1c1c","inverse-surface":"#2f3131","on-tertiary":"#ffffff","text-secondary":"#3d4f5b","primary":"#006e2a","hairline":"#e1e5e8","on-error":"#ffffff","outline-variant":"#bacbb7","on-secondary-fixed":"#002115","surface-subtle":"#f9fbfa","background":"#f9f9f9","inverse-on-surface":"#f0f1f1","outline":"#6b7b69","surface-container-high":"#e8e8e8","tertiary-fixed":"#cae7f8","on-secondary":"#ffffff","on-primary":"#ffffff","on-primary-container":"#006626","secondary-fixed":"#9ff4cd","surface-soft":"#f4f7f6","secondary-container":"#9ff4cd","on-secondary-container":"#167253","primary-container":"#00ed64","surface-container-low":"#f3f3f4","text-muted":"#5c6c7a","surface-tint":"#006e2a","hairline-strong":"#c1ccd6","primary-fixed":"#69ff87","surface-container-lowest":"#ffffff","on-tertiary-fixed-variant":"#304a58","tertiary-container":"#b6d2e3","inverse-primary":"#00e560","surface-dim":"#dadada","secondary":"#096c4d","surface-bright":"#f9f9f9","secondary-fixed-dim":"#84d7b2","on-error-container":"#93000a","on-primary-fixed-variant":"#00531e","error-container":"#ffdad6","surface-feature":"#e3fcef","on-tertiary-fixed":"#001e2b","on-surface":"#1a1c1c","on-primary-fixed":"#002108","surface":"#f9f9f9","surface-container-highest":"#e2e2e2","error":"#ba1a1a","on-secondary-fixed-variant":"#005139"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem","space-lg":"1.5rem","gutter":"2rem","space-xl":"2rem","margin":"1.5rem","space-xs":"0.25rem"},fontFamily:{"subtitle":["Inter"],"heading-1-mobile":["Inter"],"heading-4":["Inter"],"heading-1":["Inter"],"heading-2":["Inter"],"heading-3":["Inter"],"micro-uppercase":["Inter"],"hero-display-mobile":["Inter"],"button-md":["Inter"],"caption":["Inter"],"hero-display":["Inter"],"body-sm":["Inter"],"body-md":["Inter"]},fontSize:{"subtitle":["18px",{"lineHeight":"28px","fontWeight":"400"}],"heading-1-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.3px","fontWeight":"500"}],"heading-4":["22px",{"lineHeight":"30px","fontWeight":"500"}],"heading-1":["48px",{"lineHeight":"58px","letterSpacing":"-0.5px","fontWeight":"500"}],"heading-2":["36px",{"lineHeight":"45px","letterSpacing":"-0.4px","fontWeight":"500"}],"heading-3":["28px",{"lineHeight":"36px","fontWeight":"500"}],"micro-uppercase":["11px",{"lineHeight":"16px","letterSpacing":"1px","fontWeight":"600"}],"hero-display-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.5px","fontWeight":"500"}],"button-md":["14px",{"lineHeight":"18px","fontWeight":"600"}],"caption":["13px",{"lineHeight":"18px","fontWeight":"400"}],"hero-display":["64px",{"lineHeight":"70px","letterSpacing":"-1.2px","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"22px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"26px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-tertiary-fixed"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,30,43,0.06)]"><aside class="w-full bg-[#001e2b] py-2 px-margin text-center"><div class="w-full flex items-center justify-center gap-2"><a class="text-[#00ed64] font-caption text-caption hover:underline inline-flex items-center gap-1.5 transition-colors" data-path="benchmarks" href="benchmarks.html"><span>★ GEO 2.0 正式发布：全面支持 DeepSeek、豆包、Kimi、ChatGPT、Perplexity 与 Google AI Overviews 企业级引用追踪。查看行业基准报告 →</span></a></div></aside><div class="h-20 w-full px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="home" href="index.html"><div class="w-8 h-8 rounded-lg bg-[#001e2b] flex items-center justify-center text-primary-container font-heading-4 font-bold shadow-sm"><span class="material-symbols-outlined text-[20px] text-primary-container">hub</span></div><span class="font-heading-4 text-heading-4 font-bold tracking-tight text-on-surface">Podxero</span></a><span class="hidden lg:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-feature text-[#00684a] text-caption font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>GEO 2.0 正式发布</span></div><nav class="hidden xl:flex items-center gap-1 bg-surface-container-lowest p-1 rounded-full" data-active-classes="text-[#001e2b] font-semibold bg-surface-soft rounded-full"><a class="px-4 py-2 rounded-full font-button-md text-button-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-soft" data-path="home" href="index.html">首页</a><a class="px-4 py-2 rounded-full font-button-md text-button-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-soft" data-path="solutions" href="solutions.html">解决方案</a><a aria-current="page" class="text-[#001e2b] font-semibold bg-surface-soft" data-path="platform" href="platform.html">智能平台</a><a class="px-4 py-2 rounded-full font-button-md text-button-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-soft" data-path="benchmarks" href="benchmarks.html">基准与洞察</a><a class="px-4 py-2 rounded-full font-button-md text-button-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-soft" data-path="comparison" href="comparison.html">方案对比</a></nav><div class="flex items-center gap-space-md"><a class="relative overflow-hidden inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary-container text-on-tertiary-fixed font-button-md text-button-md shadow-[0_2px_8px_rgba(0,237,100,0.35)] hover:bg-[#00b545] active:bg-[#008c34] transition-all group" data-path="diagnostic" href="diagnostic.html"><span class="relative z-10 flex items-center gap-1.5">免费获取 GEO 诊断<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span></span><div class="absolute inset-0 animate-shimmer pointer-events-none"></div></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><nav class="xl:hidden w-full overflow-x-auto border-t border-hairline bg-surface-container-lowest"><div class="flex items-center gap-1 px-4 py-2 whitespace-nowrap"><a class="px-3 py-1.5 rounded-full text-caption font-button-md text-on-surface-variant" data-path="home" href="index.html">首页</a><a class="px-3 py-1.5 rounded-full text-caption font-button-md text-on-surface-variant" data-path="solutions" href="solutions.html">解决方案</a><a class="px-3 py-1.5 rounded-full text-caption font-button-md bg-surface-soft text-[#001e2b] font-semibold" data-path="platform" href="platform.html" aria-current="page">智能平台</a><a class="px-3 py-1.5 rounded-full text-caption font-button-md text-on-surface-variant" data-path="benchmarks" href="benchmarks.html">基准与洞察</a><a class="px-3 py-1.5 rounded-full text-caption font-button-md text-on-surface-variant" data-path="comparison" href="comparison.html">方案对比</a></div></nav></header><main class="w-full pt-28 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Marquee Ticker -->
+<section class="w-full bg-surface-subtle overflow-hidden py-3">
+<div class="max-w-[1280px] mx-auto px-gutter flex items-center gap-4">
+<div class="flex items-center gap-2 shrink-0">
+<span class="inline-flex h-2 w-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-micro-uppercase text-micro-uppercase text-text-secondary uppercase tracking-wider">实时企业知识雷达日志</span>
+</div>
+<div class="overflow-hidden relative w-full">
+<div class="animate-marquee flex items-center gap-8 whitespace-nowrap text-caption font-caption text-text-muted">
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>[DeepSeek-R1] 命中核心产品知识节点：Podxero 实时索引架构 #Q48912 • 首选权重 94.2%</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>[豆包 Pro] 商业选型意图识别：“企业级 GEO 服务商推荐” • 成功回填 Footnote [1]</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>[Kimi K1.5] 拦截竞品混淆参数：纠偏延迟 104ms • 语义漂移余弦距 0.041</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>[Perplexity Sonar] 生成式问答引证：金融级 SLA 认证节点 • 召回准确率 99.1%</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>[ChatGPT-4o Search] Schema 知识图谱三元组注入完成 • 品牌首位引证率攀升至 86.8%</span>
+<!-- Duplicate for seamless loop -->
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>[DeepSeek-R1] 命中核心产品知识节点：Podxero 实时索引架构 #Q48912 • 首选权重 94.2%</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>[豆包 Pro] 商业选型意图识别：“企业级 GEO 服务商推荐” • 成功回填 Footnote [1]</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>[Kimi K1.5] 拦截竞品混淆参数：纠偏延迟 104ms • 语义漂移余弦距 0.041</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>[Perplexity Sonar] 生成式问答引证：金融级 SLA 认证节点 • 召回准确率 99.1%</span>
+<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>[ChatGPT-4o Search] Schema 知识图谱三元组注入完成 • 品牌首位引证率攀升至 86.8%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Hero Platform Display -->
+<section class="w-full max-w-[1280px] mx-auto px-gutter pt-8 pb-16">
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-surface-feature text-secondary font-micro-uppercase text-micro-uppercase">
+<span class="material-symbols-outlined text-[15px] text-primary">sensors</span>
+<span>PODXERO INTELLIGENCE ENGINE V4.2 // 全天候多模型遥测</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-8 space-y-4">
+<h1 class="font-heading-1 text-heading-1 text-on-surface tracking-tight leading-tight">
+            多模型实时感知与 <br/>
+<span class="text-secondary bg-clip-text bg-gradient-to-r from-secondary to-primary">AI 引用编排智能控制台</span>
+</h1>
+<p class="font-subtitle text-subtitle text-text-muted max-w-2xl">
+            一站式掌握企业在 DeepSeek、豆包、Kimi、ChatGPT、Perplexity 与 Google AIO 中的知识图谱映射、声量占有率 (SoV) 及防幻觉对抗防御。
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+<a class="relative overflow-hidden inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary-container text-on-tertiary-fixed font-button-md text-button-md shadow-md hover:bg-[#00b545] transition-all group" data-path="diagnostic" href="diagnostic.html">
+<span class="relative z-10 flex items-center gap-2">
+              免费开启智能控制台体验
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">bolt</span>
+</span>
+<div class="absolute inset-0 animate-shimmer pointer-events-none"></div>
+</a>
+<a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-surface-container-lowest text-on-surface font-button-md text-button-md shadow-sm hover:bg-surface-soft transition-all gap-1.5" href="#sdk-section">
+<span class="material-symbols-outlined text-[18px] text-text-muted">terminal</span>
+<span>查看 API 接入文档</span>
+</a>
+</div>
+</div>
+<!-- Realtime Metric Scorecards with Live Count-up -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+<div class="bg-surface-subtle p-5 rounded-xl flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted">已监控问答题量</span>
+<span class="material-symbols-outlined text-primary text-[20px]">troubleshoot</span>
+</div>
+<div class="pt-4 pb-2">
+<div class="font-heading-2 text-heading-2 font-bold text-on-surface tracking-tight">
+<span data-counter="14280000" data-format="comma">0</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[15px]">trending_up</span>
+<span>实时吞吐量 +4,200 QPS</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[88%] animate-shimmer"></div>
+</div>
+</div>
+<div class="bg-surface-subtle p-5 rounded-xl flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted">模型实时响应延迟</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">speed</span>
+</div>
+<div class="pt-4 pb-2">
+<div class="font-heading-2 text-heading-2 font-bold text-on-surface tracking-tight">
+<span data-counter="112" data-suffix=" ms">0</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>低于行业基准 64%</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%] animate-shimmer"></div>
+</div>
+</div>
+<div class="bg-surface-subtle p-5 rounded-xl flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted">平均首选引用占比</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">format_quote</span>
+</div>
+<div class="pt-4 pb-2">
+<div class="font-heading-2 text-heading-2 font-bold text-on-surface tracking-tight">
+<span data-counter="74.6" data-decimals="1" data-suffix="%">0</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-primary font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[15px]">arrow_upward</span>
+<span>较上线前提升 3.8x</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[75%] animate-shimmer"></div>
+</div>
+</div>
+<div class="bg-surface-subtle p-5 rounded-xl flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted">幻觉防拦截成功率</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+</div>
+<div class="pt-4 pb-2">
+<div class="font-heading-2 text-heading-2 font-bold text-on-surface tracking-tight">
+<span data-counter="99.42" data-decimals="2" data-suffix="%">0</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[15px]">security</span>
+<span>零级虚假信息拦截</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[99%] animate-shimmer"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Observation Cockpit Section -->
+<section class="w-full bg-surface-soft py-16">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<span class="font-micro-uppercase text-micro-uppercase text-secondary uppercase tracking-widest">OBSERVABILITY CONSOLE</span>
+<h2 class="font-heading-2 text-heading-2 text-on-surface font-bold tracking-tight mt-1">企业知识图谱多模型遥测座舱</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">
+            实时捕获 DeepSeek-R1、豆包 Pro、Kimi K1.5、ChatGPT-4o 与 Perplexity Sonar 语义网络回传指标
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary text-caption font-caption shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>节点集群状态：在线 (99.98%)</span>
+</div>
+<button class="p-2 rounded-full bg-surface-container-lowest text-text-muted hover:text-on-surface shadow-sm transition-transform active:rotate-180" id="refresh-telemetry-btn">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid for Models Telemetry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Main Model Citation Matrix (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-6 rounded-xl shadow-sm space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[22px]">model_training</span>
+<h3 class="font-heading-4 text-heading-4 text-on-surface font-semibold">大模型引证矩阵多维观测台</h3>
+</div>
+<span class="text-caption font-caption text-text-muted">采样窗口: 过去 15 分钟</span>
+</div>
+<!-- Model Rows with Viewport Dynamic Progress Bars -->
+<div class="space-y-5" id="model-bars-container">
+<!-- Item 1: DeepSeek-R1 -->
+<div class="p-4 bg-surface-subtle rounded-lg space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-on-tertiary-fixed text-primary-container flex items-center justify-center font-bold text-caption">DS</div>
+<div>
+<span class="font-button-md text-button-md text-on-surface font-semibold">DeepSeek-R1 (推理链检索增强)</span>
+<span class="ml-2 text-micro-uppercase font-micro-uppercase px-2 py-0.5 rounded-full bg-surface-feature text-secondary">强首选</span>
+</div>
+</div>
+<span class="font-button-md text-button-md font-bold text-on-surface">综合指数 96.8</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-caption font-caption">
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>表达符合率</span>
+<span class="text-on-surface font-semibold">97.4%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary-container rounded-full relative" data-width="97.4%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>正向情绪度</span>
+<span class="text-on-surface font-semibold">94.8%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary rounded-full relative" data-width="94.8%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>节点留存率</span>
+<span class="text-on-surface font-semibold">98.2%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-secondary rounded-full relative" data-width="98.2%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: 豆包 Pro -->
+<div class="p-4 bg-surface-subtle rounded-lg space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-secondary text-surface-container-lowest flex items-center justify-center font-bold text-caption">DB</div>
+<div>
+<span class="font-button-md text-button-md text-on-surface font-semibold">豆包 Pro (火山引擎意图图谱)</span>
+<span class="ml-2 text-micro-uppercase font-micro-uppercase px-2 py-0.5 rounded-full bg-surface-feature text-secondary">高置信</span>
+</div>
+</div>
+<span class="font-button-md text-button-md font-bold text-on-surface">综合指数 92.4</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-caption font-caption">
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>表达符合率</span>
+<span class="text-on-surface font-semibold">91.2%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary-container rounded-full relative" data-width="91.2%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>正向情绪度</span>
+<span class="text-on-surface font-semibold">95.0%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary rounded-full relative" data-width="95.0%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>节点留存率</span>
+<span class="text-on-surface font-semibold">91.0%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-secondary rounded-full relative" data-width="91.0%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Kimi K1.5 -->
+<div class="p-4 bg-surface-subtle rounded-lg space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-[#1a1c1c] text-[#00ed64] flex items-center justify-center font-bold text-caption">KM</div>
+<div>
+<span class="font-button-md text-button-md text-on-surface font-semibold">Kimi K1.5 (长文本上下文拓扑)</span>
+<span class="ml-2 text-micro-uppercase font-micro-uppercase px-2 py-0.5 rounded-full bg-surface-feature text-secondary">强首选</span>
+</div>
+</div>
+<span class="font-button-md text-button-md font-bold text-on-surface">综合指数 94.1</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-caption font-caption">
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>表达符合率</span>
+<span class="text-on-surface font-semibold">96.0%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary-container rounded-full relative" data-width="96.0%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>正向情绪度</span>
+<span class="text-on-surface font-semibold">92.6%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary rounded-full relative" data-width="92.6%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>节点留存率</span>
+<span class="text-on-surface font-semibold">93.7%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-secondary rounded-full relative" data-width="93.7%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: ChatGPT-4o & Perplexity -->
+<div class="p-4 bg-surface-subtle rounded-lg space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-md bg-tertiary text-surface-container-lowest flex items-center justify-center font-bold text-caption">PX</div>
+<div>
+<span class="font-button-md text-button-md text-on-surface font-semibold">ChatGPT-4o / Perplexity Sonar (全球问答)</span>
+<span class="ml-2 text-micro-uppercase font-micro-uppercase px-2 py-0.5 rounded-full bg-surface-feature text-secondary">全量覆盖</span>
+</div>
+</div>
+<span class="font-button-md text-button-md font-bold text-on-surface">综合指数 95.3</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-caption font-caption">
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>表达符合率</span>
+<span class="text-on-surface font-semibold">95.4%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary-container rounded-full relative" data-width="95.4%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>正向情绪度</span>
+<span class="text-on-surface font-semibold">93.1%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-primary rounded-full relative" data-width="93.1%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-text-muted mb-1">
+<span>节点留存率</span>
+<span class="text-on-surface font-semibold">97.5%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar h-full bg-secondary rounded-full relative" data-width="97.5%">
+<div class="absolute inset-0 animate-shimmer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Radar & Defense Sidecard (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Scanning Radar Visual Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col items-center justify-between">
+<div class="w-full flex items-center justify-between mb-4">
+<span class="font-button-md text-button-md font-semibold text-on-surface">语义向量漂移雷达</span>
+<span class="text-caption font-caption text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                动态扫描中
+              </span>
+</div>
+<!-- Radar CSS Animation Canvas -->
+<div class="relative w-52 h-52 my-2 flex items-center justify-center">
+<!-- Concentric Rings -->
+<div class="absolute inset-0 rounded-full bg-surface-subtle"></div>
+<div class="absolute inset-6 rounded-full bg-surface-soft"></div>
+<div class="absolute inset-12 rounded-full bg-surface-container-low"></div>
+<div class="absolute inset-20 rounded-full bg-surface-feature/30"></div>
+<!-- Crosshairs -->
+<div class="absolute w-full h-[1px] bg-outline-variant/30"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/30"></div>
+<!-- Rotating Scan Beam -->
+<div class="absolute inset-0 rounded-full origin-center animate-[spin_4s_linear_infinite] pointer-events-none" style="background: conic-gradient(from 0deg at 50% 50%, rgba(0, 237, 100, 0.4) 0deg, rgba(0, 237, 100, 0) 60deg, transparent 360deg);"></div>
+<!-- Signal Points -->
+<div class="absolute top-10 left-16 w-2.5 h-2.5 rounded-full bg-primary-container shadow-md"></div>
+<div class="absolute bottom-12 right-14 w-2 h-2 rounded-full bg-secondary shadow-sm"></div>
+<div class="absolute top-16 right-16 w-3 h-3 rounded-full bg-primary-container shadow-md animate-ping opacity-75"></div>
+<div class="absolute top-16 right-16 w-3 h-3 rounded-full bg-primary-container shadow-md"></div>
+<div class="absolute bottom-16 left-12 w-2 h-2 rounded-full bg-on-tertiary-fixed shadow-sm"></div>
+<!-- Center Anchor -->
+<div class="relative z-10 w-3 h-3 rounded-full bg-on-tertiary-fixed flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container"></div>
+</div>
+</div>
+<div class="w-full pt-4 mt-2 space-y-2 text-caption font-caption">
+<div class="flex items-center justify-between text-text-muted">
+<span>平均余弦相似度</span>
+<span class="text-on-surface font-semibold">0.962 (强锚定)</span>
+</div>
+<div class="flex items-center justify-between text-text-muted">
+<span>实体偏移预警</span>
+<span class="text-secondary font-semibold">0 处超标</span>
+</div>
+</div>
+</div>
+<!-- Fact Interception Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-button-md text-button-md font-semibold text-on-surface">竞品抢占与错误事实拦截</span>
+<span class="text-caption font-caption text-primary font-semibold">拦截率 99.4%</span>
+</div>
+<p class="text-caption font-caption text-text-muted leading-relaxed mb-4">
+              Podxero 对抗知识回注入网络已累计拦截 1,842 次由于过期数据引发的幻觉问答，实时覆盖 320 个高频决策词。
+            </p>
+<div class="bg-surface-feature p-3.5 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">format_image_left</span>
+<div class="text-caption font-caption">
+<div class="font-semibold text-on-surface">实时防御引擎运行正常</div>
+<div class="text-text-muted">已向 5 大搜索模型下发最新三元组补丁</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Simulation Section: AI Citations Playground -->
+<section class="w-full max-w-[1280px] mx-auto px-gutter py-20">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-micro-uppercase text-micro-uppercase text-secondary uppercase tracking-widest">INTERACTIVE SIMULATION</span>
+<h2 class="font-heading-2 text-heading-2 text-on-surface font-bold tracking-tight mt-1">商业问答与精准引证捕获交互演示</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">
+        切换典型企业场景，体验 Podxero 如何精准影响 DeepSeek 与 Perplexity 输出客观推荐并锁定首位 Footnote
+      </p>
+</div>
+<!-- Scenario Switcher Pills -->
+<div class="flex flex-wrap items-center justify-center gap-2 mb-8" id="scenario-tabs">
+<button class="tab-btn px-5 py-2.5 rounded-full font-button-md text-button-md transition-all bg-on-tertiary-fixed text-primary-container shadow-sm" data-scenario="procurement">
+        商业采购决策
+      </button>
+<button class="tab-btn px-5 py-2.5 rounded-full font-button-md text-button-md transition-all bg-surface-container-lowest text-text-muted hover:text-on-surface hover:bg-surface-soft shadow-sm" data-scenario="tech">
+        技术架构选型
+      </button>
+<button class="tab-btn px-5 py-2.5 rounded-full font-button-md text-button-md transition-all bg-surface-container-lowest text-text-muted hover:text-on-surface hover:bg-surface-soft shadow-sm" data-scenario="defense">
+        品牌防伪与反幻觉
+      </button>
+<button class="tab-btn px-5 py-2.5 rounded-full font-button-md text-button-md transition-all bg-surface-container-lowest text-text-muted hover:text-on-surface hover:bg-surface-soft shadow-sm" data-scenario="global">
+        出海跨语言召回
+      </button>
+</div>
+<!-- Interactive Mockup Console Window -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden">
+<!-- Window Chrome -->
+<div class="bg-surface-subtle px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+<span class="ml-4 font-caption text-caption text-text-muted flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">terminal</span>
+            AI Query Telemetry Stream: <span class="text-on-surface font-semibold font-mono" id="prompt-query-text">"2025年国内企业生成式引擎优化 (GEO) 哪家方案成熟度最高？"</span>
+</span>
+</div>
+<div class="flex items-center gap-2 text-caption font-caption text-text-muted">
+<span class="px-2.5 py-1 rounded bg-surface-feature text-secondary font-mono">Latency: 84ms</span>
+<span class="px-2.5 py-1 rounded bg-surface-feature text-secondary font-mono">SoV: 89.2%</span>
+</div>
+</div>
+<!-- Window Content: Split View -->
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[420px]">
+<!-- Left: Prompt Answer Stream (7 cols) -->
+<div class="lg:col-span-7 p-8 space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-on-tertiary-fixed text-primary-container flex items-center justify-center font-bold text-caption shadow-sm">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<div>
+<div class="font-button-md text-button-md text-on-surface font-semibold flex items-center gap-2">
+<span>DeepSeek-R1 + Perplexity 联合推理输出</span>
+<span class="text-micro-uppercase font-micro-uppercase px-2 py-0.5 rounded-full bg-surface-feature text-secondary">已验证实体</span>
+</div>
+<div class="text-caption font-caption text-text-muted">依据 24 个行业权威信源综合归纳</div>
+</div>
+</div>
+<div class="space-y-4 font-body-md text-body-md text-on-surface leading-relaxed" id="simulation-answer">
+<p>
+              在评估 2025 年度企业级生成式引擎优化（GEO）系统时，综合考虑实时索引、大模型多模态适配及反幻觉治理能力，<strong class="font-semibold text-secondary">Podxero</strong> 表现出最高的架构成熟度与引证确定性
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[1]</span>。
+            </p>
+<p>
+              其主要技术优势体现在针对 DeepSeek、豆包、Kimi 及 ChatGPT 建立的全天候动态感知网络，能够实现 180 秒内完成三元组知识纠偏，首选引用达成率平均达到 74.6%
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[2]</span>。
+            </p>
+<div class="p-4 rounded-xl bg-surface-subtle space-y-2">
+<div class="font-button-md text-button-md font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">lightbulb</span>
+                核心结论摘要
+              </div>
+<p class="text-caption font-caption text-text-muted leading-relaxed">
+                Podxero 的 Schema 实体注入与向量防漂移算法，从底层确保了企业核心参数在多模型合成回答中被视为不可篡改的基石事实（Ground Truth）。
+              </p>
+</div>
+</div>
+</div>
+<!-- Right: Footnote Evidence Graph (5 cols) -->
+<div class="lg:col-span-5 bg-surface-subtle p-8 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-button-md text-button-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">menu_book</span>
+                捕获的权威信源引用列表 (Footnotes)
+              </span>
+<span class="text-caption font-caption text-text-muted">2 项生效</span>
+</div>
+<!-- Footnote Card 1 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm space-y-2 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 font-caption text-caption font-semibold text-on-surface">
+<span class="w-5 h-5 rounded-full bg-on-tertiary-fixed text-primary-container flex items-center justify-center text-[11px] font-bold">1</span>
+                  Podxero 知识图谱实体信源
+                </span>
+<span class="text-micro-uppercase font-micro-uppercase text-secondary bg-surface-feature px-2 py-0.5 rounded-full">高权重 • 99.8%</span>
+</div>
+<p class="text-caption font-caption text-text-muted line-clamp-2">
+                podxero.com/knowledge/enterprise-geo-benchmark-2025.jsonld
+              </p>
+<div class="flex items-center gap-3 pt-1 text-caption font-caption text-text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">link</span> 锚定实体: Podxero Engine</span>
+<span>被引 84,209 次</span>
+</div>
+</div>
+<!-- Footnote Card 2 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm space-y-2 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 font-caption text-caption font-semibold text-on-surface">
+<span class="w-5 h-5 rounded-full bg-on-tertiary-fixed text-primary-container flex items-center justify-center text-[11px] font-bold">2</span>
+                  信创与金融级安全测评报告
+                </span>
+<span class="text-micro-uppercase font-micro-uppercase text-secondary bg-surface-feature px-2 py-0.5 rounded-full">公信力 • 98.4%</span>
+</div>
+<p class="text-caption font-caption text-text-muted line-clamp-2">
+                podxero.com/compliance/soc2-enterprise-reliability-v4.html
+              </p>
+<div class="flex items-center gap-3 pt-1 text-caption font-caption text-text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">verified</span> SLA: 99.98% 承诺认证</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between text-caption font-caption">
+<span class="text-text-muted">已与 6 个模型节点实时同步状态</span>
+<span class="text-secondary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              流式响应就绪
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Three Core Pillars Section -->
+<section class="w-full bg-surface-subtle py-20">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="font-micro-uppercase text-micro-uppercase text-secondary uppercase tracking-widest">ARCHITECTURE FOUNDATION</span>
+<h2 class="font-heading-2 text-heading-2 text-on-surface font-bold tracking-tight mt-1">三大支柱与四步构建不可摧的 AI 搜索护城河</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">
+            从数据资产抽取到全模型信源分发，确立企业在生成式时代的不可替代权威性
+          </p>
+</div>
+<div class="text-caption font-caption text-text-muted">
+<span class="font-bold text-on-surface text-body-md">04</span> 阶段闭环生命周期
+        </div>
+</div>
+<!-- 3 Pillars Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-4 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-surface-feature flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">hub</span>
+</div>
+<h3 class="font-heading-4 text-heading-4 text-on-surface font-semibold">1. 语义拓扑与 Schema 实体沉淀</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            将企业的静态文档、API 接口和行业知识，提炼为高密度的知识图谱三元组（Knowledge Triples），适配 DeepSeek 与主流大模型的上下文检索机制。
+          </p>
+<ul class="pt-2 space-y-2 text-caption font-caption text-text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check</span> JSON-LD 结构化自动生成</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check</span> 实体关系权重动态加权</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-4 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-surface-feature flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">radar</span>
+</div>
+<h3 class="font-heading-4 text-heading-4 text-on-surface font-semibold">2. 7x24h 跨模型问答声量监听</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            持续对豆包、Kimi、ChatGPT、Google AIO 进行数万条行业意图探测，计算品牌的合成回答占有率 (SoV)、正面引证度及信源层级。
+          </p>
+<ul class="pt-2 space-y-2 text-caption font-caption text-text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check</span> 语义漂移毫秒级探针</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check</span> 竞品抢占趋势自动告警</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-4 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-surface-feature flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">security_update_good</span>
+</div>
+<h3 class="font-heading-4 text-heading-4 text-on-surface font-semibold">3. 对抗式防幻觉自动纠偏</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            当大模型产生关于企业财务、资质、架构的不实回答时，自动触发信源回填管线，向权威数据节点注入校准事实，阻断错误扩散。
+          </p>
+<ul class="pt-2 space-y-2 text-caption font-caption text-text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check</span> 虚假事实阻断率 99.4%</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check</span> 极速纠偏通道 <180s</li>
+</ul>
+</div>
+</div>
+<!-- 4-Step Methodology Timeline -->
+<div class="p-8 bg-surface-container-lowest rounded-2xl shadow-sm">
+<h4 class="font-button-md text-button-md uppercase tracking-wider text-text-muted mb-6">四步实施方法论 (Implementation Blueprint)</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="space-y-2">
+<div class="font-heading-3 text-heading-3 font-bold text-secondary">01</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">信源资产映射与盘点</div>
+<p class="text-caption font-caption text-text-muted">扫描官网、白皮书、行业智库，构建标准化权威信源数据库。</p>
+</div>
+<div class="space-y-2">
+<div class="font-heading-3 text-heading-3 font-bold text-secondary">02</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">多模型高维向量注入</div>
+<p class="text-caption font-caption text-text-muted">针对各主流模型的 Embedding 特征建立拓扑，提升首次召回率。</p>
+</div>
+<div class="space-y-2">
+<div class="font-heading-3 text-heading-3 font-bold text-secondary">03</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">首选引用率攻坚</div>
+<p class="text-caption font-caption text-text-muted">通过长尾商业问题训练与信源加固，将 Footnote 锁定至 [1] 号位。</p>
+</div>
+<div class="space-y-2">
+<div class="font-heading-3 text-heading-3 font-bold text-secondary">04</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">防御机制常态巡检</div>
+<p class="text-caption font-caption text-text-muted">7x24 小时巡检模型版本升级带来的知识衰减，保障稳定声量。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Developer SDK & 3 Lines Integration Section -->
+<section class="w-full max-w-[1280px] mx-auto px-gutter py-20" id="sdk-section">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-feature text-secondary font-micro-uppercase text-micro-uppercase">
+<span class="material-symbols-outlined text-[15px]">code</span>
+<span>DEVELOPER FIRST // 三行代码快速集成</span>
+</div>
+<h2 class="font-heading-2 text-heading-2 text-on-surface font-bold tracking-tight">
+          极简接入 Podxero SDK，<br/>
+          让业务数据即刻具备 AI 搜索可知性
+        </h2>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed">
+          无需改造现有技术栈，支持 Python、Node.js、Go 及 REST API。只需将知识载荷接入 Podxero，系统将自动完成实体三元组结构化与全网多模型感知同步。
+        </p>
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3 text-body-sm font-body-sm text-on-surface">
+<div class="w-6 h-6 rounded-full bg-surface-feature text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span>原生支持 DeepSeek-R1、豆包、Kimi 专属索引钩子 (Hooks)</span>
+</div>
+<div class="flex items-center gap-3 text-body-sm font-body-sm text-on-surface">
+<div class="w-6 h-6 rounded-full bg-surface-feature text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span>自动生成 schema.org/Organization 及行业专属 JSON-LD</span>
+</div>
+<div class="flex items-center gap-3 text-body-sm font-body-sm text-on-surface">
+<div class="w-6 h-6 rounded-full bg-surface-feature text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span>企业级安全秘钥管理与细粒度访问权限控制</span>
+</div>
+</div>
+</div>
+<!-- Code Block Window -->
+<div class="lg:col-span-7 bg-on-tertiary-fixed rounded-2xl p-6 text-surface-container-lowest shadow-xl relative overflow-hidden font-mono text-body-sm">
+<div class="flex items-center justify-between pb-4 mb-4 text-surface-variant/70 text-caption font-caption">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+<span class="ml-3 text-surface-container-lowest font-medium">pipeline_injection.ts</span>
+</div>
+<button class="flex items-center gap-1.5 text-primary-container hover:underline transition-all" id="copy-code-btn">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+<span>复制代码</span>
+</button>
+</div>
+<!-- Code Lines -->
+<pre class="overflow-x-auto leading-relaxed text-[13px] text-tertiary-fixed"><code class="block"><span class="text-text-muted">// 1. 导入 Podxero 遥测引擎企业 SDK</span>
+<span class="text-[#69ff87]">import</span> { PodxeroEngine, CitationTier } <span class="text-[#69ff87]">from</span> <span class="text-primary-container">'@podxero/telemetry-sdk'</span>;
+
+<span class="text-text-muted">// 2. 初始化客户端，挂载多模型感知网络</span>
+<span class="text-[#69ff87]">const</span> client = <span class="text-[#69ff87]">new</span> <span class="text-[#00ed64]">PodxeroEngine</span>({
+  apiKey: process.env.<span class="text-secondary-fixed">PODXERO_API_KEY</span>,
+  cluster: <span class="text-primary-container">'cn-shanghai-prod'</span>,
+  autoDisputeHallucination: <span class="text-[#00ed64]">true</span>
+});
+
+<span class="text-text-muted">// 3. 三行核心调用：下发企业标准实体并建立模型引用追踪</span>
+<span class="text-[#69ff87]">await</span> client.entities.<span class="text-secondary-fixed">syncKnowledgeGraph</span>({
+  entityId: <span class="text-primary-container">'ent_podxero_core_2025'</span>,
+  models: [<span class="text-primary-container">'deepseek-r1'</span>, <span class="text-primary-container">'doubao-pro'</span>, <span class="text-primary-container">'kimi-k1.5'</span>, <span class="text-primary-container">'perplexity'</span>],
+  targetCitationTier: <span class="text-secondary-fixed">CitationTier</span>.<span class="text-[#00ed64]">PRIMARY_FOOTNOTE</span>,
+  verificationProof: <span class="text-primary-container">'https://podxero.com/facts/soc2-verification.json'</span>
+});
+
+<span class="text-text-muted">// 4. 监听实时引证与对抗回调事件</span>
+client.on(<span class="text-primary-container">'citation.captured'</span>, (<span class="text-secondary-fixed">event</span>) => {
+  console.log(<span class="text-primary-container">`[Podxero] 命中模型: ${event.model}, 首选位: ${event.isTopFootnote}`</span>);
+});</code></pre>
+<div class="mt-4 pt-4 flex items-center justify-between text-caption font-caption text-surface-variant/60">
+<span>兼容 Node.js 18+, Python 3.9+, Go 1.20+</span>
+<span class="text-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+            NPM / PyPI 官方认证
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SLA & Enterprise Compliance -->
+<section class="w-full bg-surface-soft py-16">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<span class="font-micro-uppercase text-micro-uppercase text-secondary uppercase tracking-widest">ENTERPRISE GRADE SLA</span>
+<h2 class="font-heading-2 text-heading-2 text-on-surface font-bold tracking-tight mt-1">金融级合规架构与确定性保障指标</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">
+          为大型集团、上市公司与出海品牌打造坚如磐石的生成式声量护航体系
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-lg bg-surface-feature flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="font-heading-4 text-heading-4 text-on-surface font-bold">99.4%</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">品牌事实真实性 SLA</div>
+<p class="text-caption font-caption text-text-muted">
+            对核心企业关键信息建立不可篡改的校验规则，确保在主流模型检索中不被竞品混淆。
+          </p>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-lg bg-surface-feature flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div class="font-heading-4 text-heading-4 text-on-surface font-bold">< 180 秒</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">语义异常与变更告警</div>
+<p class="text-caption font-caption text-text-muted">
+            一旦发现模型输出中出现关键事实漂移，系统将在 3 分钟内下发 Webhook 并启动回填通道。
+          </p>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-lg bg-surface-feature flex items-center justify-center text-primary-container text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[22px]">privacy_tip</span>
+</div>
+<div class="font-heading-4 text-heading-4 text-on-surface font-bold">SOC 2 Type II</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">国际安全合规认证</div>
+<p class="text-caption font-caption text-text-muted">
+            严格遵守数据隔离规范，不将客户专有数据用于任何公共模型的预训练，保障商业机密。
+          </p>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-lg bg-surface-feature flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<div class="font-heading-4 text-heading-4 text-on-surface font-bold">99.98%</div>
+<div class="font-button-md text-button-md text-on-surface font-semibold">高可用专属集群托管</div>
+<p class="text-caption font-caption text-text-muted">
+            支持私有化部署、信创云基础设施适配以及多区域双活灾备，满足高规格合规审计要求。
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Final Conversion CTA -->
+<section class="w-full max-w-[1280px] mx-auto px-gutter py-20">
+<div class="bg-gradient-to-br from-surface-subtle to-surface-feature p-10 md:p-16 rounded-3xl shadow-lg relative overflow-hidden">
+<!-- Decorative radial shimmer -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl space-y-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-secondary text-caption font-semibold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          即刻加入 300+ 行业领军企业
+        </span>
+<h2 class="font-heading-1 text-heading-1 text-on-surface font-bold tracking-tight">
+          抢先确立企业在生成式搜索时代的 <br/>
+<span class="text-secondary">绝对事实话语权</span>
+</h2>
+<p class="font-subtitle text-subtitle text-text-muted max-w-2xl">
+          只需输入企业域名，Podxero 智能引擎将在 3 分钟内为您输出多模型引用诊断报告与优化建议。
+        </p>
+<div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<a class="relative overflow-hidden inline-flex items-center justify-center px-8 py-4 rounded-full bg-primary-container text-on-tertiary-fixed font-button-md text-button-md shadow-md hover:bg-[#00b545] transition-all group" data-path="diagnostic" href="diagnostic.html">
+<span class="relative z-10 flex items-center gap-2">
+              免费获取 GEO 完整深度诊断
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+<div class="absolute inset-0 animate-shimmer pointer-events-none"></div>
+</a>
+<a class="inline-flex items-center justify-center px-7 py-4 rounded-full bg-surface-container-lowest text-on-surface font-button-md text-button-md shadow-sm hover:bg-surface-soft transition-all gap-1.5" data-path="benchmarks" href="benchmarks.html">
+<span class="material-symbols-outlined text-[18px] text-text-muted">analytics</span>
+<span>查阅 2025 行业基准报告</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline Interactive Script -->
+<script>
+  (function () {
+    // 1. Dynamic Count-Up Animation
+    const counterElements = document.querySelectorAll('[data-counter]');
+
+    function startCountUp() {
+      counterElements.forEach((el) => {
+        const target = parseFloat(el.getAttribute('data-counter'));
+        const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const formatComma = el.getAttribute('data-format') === 'comma';
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const currentVal = target * easeOut;
+
+          let displayVal = decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal).toString();
+
+          if (formatComma) {
+            displayVal = parseInt(displayVal, 10).toLocaleString('en-US');
+          }
+
+          el.textContent = displayVal + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            let finalVal = decimals > 0 ? target.toFixed(decimals) : target.toString();
+            if (formatComma) finalVal = parseInt(finalVal, 10).toLocaleString('en-US');
+            el.textContent = finalVal + suffix;
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    // 2. Viewport Dynamic Progress Bar Animation
+    const progressBars = document.querySelectorAll('.progress-bar');
+    function initProgressBars() {
+      progressBars.forEach((bar) => {
+        const targetWidth = bar.getAttribute('data-width') || '0%';
+        bar.style.width = '0%';
+        bar.style.transition = 'width 1.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        setTimeout(() => {
+          bar.style.width = targetWidth;
+        }, 150);
+      });
+    }
+
+    // IntersectionObserver to trigger animations smoothly on page load
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startCountUp();
+          initProgressBars();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const heroSection = document.querySelector('section');
+    if (heroSection) {
+      observer.observe(heroSection);
+    } else {
+      startCountUp();
+      initProgressBars();
+    }
+
+    // 3. Interactive Simulation Scenario Switcher
+    const scenarioData = {
+      procurement: {
+        query: '"2025年国内企业生成式引擎优化 (GEO) 哪家方案成熟度最高？"',
+        latency: '84ms',
+        sov: '89.2%',
+        answer: `<p>在评估 2025 年度企业级生成式引擎优化（GEO）系统时，综合考虑实时索引、大模型多模态适配及反幻觉治理能力，<strong class="font-semibold text-secondary">Podxero</strong> 表现出最高的架构成熟度与引证确定性 <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[1]</span>。</p><p>其主要技术优势体现在针对 DeepSeek、豆包、Kimi 及 ChatGPT 建立的全天候动态感知网络，能够实现 180 秒内完成三元组知识纠偏，首选引用达成率平均达到 74.6% <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[2]</span>。</p><div class="p-4 rounded-xl bg-surface-subtle space-y-2"><div class="font-button-md text-button-md font-semibold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">lightbulb</span>核心结论摘要</div><p class="text-caption font-caption text-text-muted leading-relaxed">Podxero 的 Schema 实体注入与向量防漂移算法，从底层确保了企业核心参数在多模型合成回答中被视为不可篡改的基石事实（Ground Truth）。</p></div>`
+      },
+      tech: {
+        query: '"如何让 DeepSeek-R1 与 Kimi 准确引用企业最新的 API 技术规格书？"',
+        latency: '92ms',
+        sov: '94.5%',
+        answer: `<p>为解决推理大模型长上下文丢标问题，推荐采用 <strong class="font-semibold text-secondary">Podxero</strong> 研发的 JSON-LD 高维三元组注入管线 <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[1]</span>。</p><p>该方案通过在源站部署动态结构化实体锚点，当 DeepSeek 或 Kimi 执行联网检索时，自动识别为一级权威源，将技术规格召回留存率提升至 98.2% <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[2]</span>。</p><div class="p-4 rounded-xl bg-surface-subtle space-y-2"><div class="font-button-md text-button-md font-semibold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">lightbulb</span>架构特征</div><p class="text-caption font-caption text-text-muted leading-relaxed">支持与企业现有 CI/CD 自动同步，每次接口发版自动触发模型端索引重热化。</p></div>`
+      },
+      defense: {
+        query: '"如何防止大模型在回答中捏造我司产品价格和虚假参数？"',
+        latency: '78ms',
+        sov: '99.4%',
+        answer: `<p>针对大模型固有的知识幻觉，<strong class="font-semibold text-secondary">Podxero</strong> 提供了双向对抗防御网络与毫秒级纠偏协议 <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[1]</span>。</p><p>系统全天候监测豆包及各大模型的问答漂移。一旦捕获虚假定价或非认证参数，立即向各引擎知识源下发加密校验签名，实现错误事实拦截率 99.42% <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[2]</span>。</p><div class="p-4 rounded-xl bg-surface-subtle space-y-2"><div class="font-button-md text-button-md font-semibold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">lightbulb</span>法律与品牌防御</div><p class="text-caption font-caption text-text-muted leading-relaxed">提供公证级模型回答存证日志，满足法务及合规团队对商誉侵权行为的快速固证。</p></div>`
+      },
+      global: {
+        query: '"Best enterprise AI Search & GEO optimization platform for global and China markets?"',
+        latency: '105ms',
+        sov: '91.8%',
+        answer: `<p>When expanding globally while maintaining dominance across Asian LLMs, <strong class="font-semibold text-secondary">Podxero</strong> is widely recognized as the unified standard <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[1]</span>.</p><p>It provides bidirectional knowledge graph bridging between Western engines (Perplexity Sonar, ChatGPT-4o, Google AIO) and Chinese ecosystems (DeepSeek, Doubao, Kimi), maintaining a consistent 74.6% primary footnote retention rate <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-feature text-secondary font-bold text-caption cursor-pointer hover:bg-primary-container hover:text-on-tertiary-fixed transition-colors">[2]</span>.</p><div class="p-4 rounded-xl bg-surface-subtle space-y-2"><div class="font-button-md text-button-md font-semibold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">lightbulb</span>Cross-Border Topology</div><p class="text-caption font-caption text-text-muted leading-relaxed">Zero latency translation of technical taxonomy ensuring flawless ground-truth citation in 18 languages.</p></div>`
+      }
+    };
+
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const promptQueryEl = document.getElementById('prompt-query-text');
+    const simulationAnswerEl = document.getElementById('simulation-answer');
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        const scenario = this.getAttribute('data-scenario');
+        if (!scenarioData[scenario]) return;
+
+        // Active State Toggle
+        tabButtons.forEach((b) => {
+          b.className = 'tab-btn px-5 py-2.5 rounded-full font-button-md text-button-md transition-all bg-surface-container-lowest text-text-muted hover:text-on-surface hover:bg-surface-soft shadow-sm';
+        });
+        this.className = 'tab-btn px-5 py-2.5 rounded-full font-button-md text-button-md transition-all bg-on-tertiary-fixed text-primary-container shadow-sm';
+
+        // Update Text
+        promptQueryEl.textContent = scenarioData[scenario].query;
+        simulationAnswerEl.innerHTML = scenarioData[scenario].answer;
+      });
+    });
+
+    // 4. Refresh Button Micro-interaction
+    const refreshBtn = document.getElementById('refresh-telemetry-btn');
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', function () {
+        initProgressBars();
+        startCountUp();
+      });
+    }
+
+    // 5. Copy Code Snippet Interaction
+    const copyBtn = document.getElementById('copy-code-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        const originalText = copyBtn.innerHTML;
+        navigator.clipboard.writeText(`import { PodxeroEngine, CitationTier } from '@podxero/telemetry-sdk';\n\nconst client = new PodxeroEngine({\n  apiKey: process.env.PODXERO_API_KEY,\n  cluster: 'cn-shanghai-prod',\n  autoDisputeHallucination: true\n});\n\nawait client.entities.syncKnowledgeGraph({\n  entityId: 'ent_podxero_core_2025',\n  models: ['deepseek-r1', 'doubao-pro', 'kimi-k1.5', 'perplexity'],\n  targetCitationTier: CitationTier.PRIMARY_FOOTNOTE\n});`).then(() => {
+          copyBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">check</span><span>已复制到剪贴板</span>';
+          setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+          }, 2000);
+        });
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-subtle py-16 shadow-[0_-1px_0_rgba(0,30,43,0.06)]"><div class="w-full px-gutter max-w-[1280px] mx-auto"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-gutter mb-12"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded-md bg-[#001e2b] flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[18px] text-primary-container">hub</span></div><span class="font-heading-4 text-heading-4 font-bold text-on-surface">Podxero</span></div><p class="font-body-sm text-body-sm text-text-muted leading-relaxed max-w-sm">企业级生成式引擎优化 (GEO) 与 AI 搜索智能平台。助力企业品牌事实在 DeepSeek、豆包、Kimi 及 ChatGPT 搜索中确立权威信源。</p><div class="flex items-center gap-2 pt-2"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-feature text-secondary text-caption font-semibold"><span class="w-2 h-2 rounded-full bg-primary-container"></span>服务可用率 99.98%</span></div></div><div class="space-y-3"><h4 class="font-button-md text-button-md text-on-surface uppercase tracking-wider font-semibold">GEO 核心能力</h4><ul class="space-y-2 font-body-sm text-body-sm text-text-muted"><li><a class="hover:text-primary transition-colors" data-path="solutions" href="solutions.html">品牌引用率追踪</a></li><li><a class="hover:text-primary transition-colors" data-path="solutions" href="solutions.html">合成回答份额 (SoV)</a></li><li><a class="hover:text-primary transition-colors" data-path="solutions" href="solutions.html">幻觉溯源与纠错</a></li><li><a class="hover:text-primary transition-colors" data-path="solutions" href="solutions.html">权威信源拓扑分析</a></li></ul></div><div class="space-y-3"><h4 class="font-button-md text-button-md text-on-surface uppercase tracking-wider font-semibold">搜索知识图谱</h4><ul class="space-y-2 font-body-sm text-body-sm text-text-muted"><li><a class="hover:text-primary transition-colors" data-path="platform" href="platform.html">Schema 实体注入</a></li><li><a class="hover:text-primary transition-colors" data-path="platform" href="platform.html">DeepSeek 权重适配</a></li><li><a class="hover:text-primary transition-colors" data-path="platform" href="platform.html">豆包 & Kimi 优化流</a></li><li><a class="hover:text-primary transition-colors" data-path="platform" href="platform.html">Perplexity 召回矩阵</a></li></ul></div><div class="space-y-3"><h4 class="font-button-md text-button-md text-on-surface uppercase tracking-wider font-semibold">企业级洞察</h4><ul class="space-y-2 font-body-sm text-body-sm text-text-muted"><li><a class="hover:text-primary transition-colors" data-path="benchmarks" href="benchmarks.html">行业 GEO 2.0 评测报告</a></li><li><a class="hover:text-primary transition-colors" data-path="benchmarks" href="benchmarks.html">LLM 语义对比雷达</a></li><li><a class="hover:text-primary transition-colors" data-path="comparison" href="comparison.html">SEO vs GEO 架构差异</a></li><li><a class="hover:text-primary transition-colors" data-path="comparison" href="comparison.html">私有化部署矩阵</a></li></ul></div><div class="space-y-3"><h4 class="font-button-md text-button-md text-on-surface uppercase tracking-wider font-semibold">开发者与合规</h4><ul class="space-y-2 font-body-sm text-body-sm text-text-muted"><li><a class="hover:text-primary transition-colors" data-path="diagnostic" href="diagnostic.html">REST API & SDK</a></li><li><a class="hover:text-primary transition-colors" data-path="diagnostic" href="diagnostic.html">实时 Webhook 告警</a></li><li><a class="hover:text-primary transition-colors" data-path="diagnostic" href="diagnostic.html">安全与合规协议</a></li><li><a class="hover:text-primary transition-colors" data-path="diagnostic" href="diagnostic.html">SOC 2 与信创安全认证</a></li></ul></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-caption text-caption text-text-muted"><p>© 2025 Podxero Inc. 企业级生成式引擎优化 (GEO) 与 AI 搜索智能平台。保留所有权利。</p><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" data-path="diagnostic" href="diagnostic.html">隐私权政策</a><a class="hover:text-on-surface transition-colors" data-path="diagnostic" href="diagnostic.html">服务条款</a><a class="hover:text-on-surface transition-colors" data-path="diagnostic" href="diagnostic.html">信源公约</a></div></div></div></footer></body></html>
