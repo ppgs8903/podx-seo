@@ -153,6 +153,12 @@ def main():
             shutil.copy(os.path.join(ROOT, "src", extra), os.path.join(SITE, extra))
             print("copied", extra, "<- src/" + extra)
 
+    # GitHub Pages serves these as-is; .nojekyll keeps Jekyll from ignoring
+    # files/dirs that start with an underscore.
+    open(os.path.join(SITE, ".nojekyll"), "w").close()
+    print("wrote site/.nojekyll")
+
+
 def nav_items():
     return NAV_ITEMS
 

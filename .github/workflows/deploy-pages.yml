@@ -41,11 +41,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # The Pages site must already exist (created once via Settings > Pages).
+      # GITHUB_TOKEN cannot create it -> no `enablement: true` here.
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Deploy to GitHub Pages
         id: deployment
