@@ -31,9 +31,23 @@ cd site && python3 -m http.server 8899
 
 ## 部署
 
-推送到 `main` 后 `.github/workflows/deploy-pages.yml` 自动构建并发布到 GitHub Pages。
+两种发布方式，任选其一。
 
-Pages 源设置为 **GitHub Actions**（首次需要仓库 Settings → Pages → Source 选择 GitHub Actions；workflow 内含 `enablement: true` 会自动开启）。
+### 方式 A：GitHub Actions（推荐）
+
+推送到 `main` 后 `.github/workflows/deploy-pages.yml` 自动构建并发布。
+
+首次需要在仓库 **Settings → Pages → Build and deployment → Source** 选 **GitHub Actions** 并保存。
+GitHub 只允许通过这个设置创建 Pages 站点，`GITHUB_TOKEN` 无权创建——所以 workflow 里没有 `enablement: true`。
+
+### 方式 B：Branch 直接发布
+
+不需要 Actions。在 **Settings → Pages → Source** 选 **Deploy from a branch**：
+Branch 填 `main`，Folder 填 `/site`，保存即可。
+
+`site/` 已包含 `.nojekyll`，不会被 Jekyll 过滤。
+
+无论哪种方式，发布源都是 `site/` 目录（Actions 模式由 workflow 上传 artifact，Branch 模式用 `/site`）。
 
 ## 路由约定
 
